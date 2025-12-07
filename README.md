@@ -3,7 +3,7 @@
 ## Commands:
 
     bob init 
-    bob set <compiler> <flags>
+    bob set <gccflags>
     bob build
     bob run
 
