@@ -1,3 +1,0 @@
-"mv : cannot stat *.o No such file or directory" sometimes comes up. 
-No clue when or why but occasionally it comes up altough it
-DOES NOT influence output or functionality.
