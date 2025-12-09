@@ -3,6 +3,6 @@
 
 int fn()
 {
-	printf("French you ");
+	printf("Kiss you ");
 	return 0;
 }

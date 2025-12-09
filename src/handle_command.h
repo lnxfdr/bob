@@ -21,6 +21,8 @@ int handle_command(int command_id, int argc, char **argv)
 	}
 	if (command_id == 2){
 		FILE *comp = fopen(".bob/compiler_flags", "w");
+		if (!comp) fprintf(stderr, ".bob/compiler_flags failed to open in handle_command()\n");
+
 		fputs("gcc ", comp);
 		for (int i = 2; i < argc; i++){
 			fputs(argv[i], comp);
@@ -28,6 +30,7 @@ int handle_command(int command_id, int argc, char **argv)
 		}
 		char out[25] = {"-o .bob/bob_executable "};
 		fputs(out, comp);
+
 		fclose(comp);
 	}
 	if (command_id == 3){
