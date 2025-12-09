@@ -13,7 +13,3 @@
     set - tells bob what flags to use;
     build - builds the files in the init directory recursively;
     run - runs the program;
-
-## Yet to be implemented:
-
-    bob does not compile or link dependencies outside the working directory;
