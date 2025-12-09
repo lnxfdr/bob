@@ -16,4 +16,4 @@
 
 ## Yet to be implemented:
 
-    bob does not compile or link dependencies outside the working directory
+    bob does not compile or link dependencies outside the working directory;
