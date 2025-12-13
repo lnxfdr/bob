@@ -27,14 +27,24 @@ int compile_objects()
 			len++;
 		}
 
-		char cmd[MAX_COMPILE_TO_OBJECTS_LENGTH] = {"gcc -c "};
-		int cmd_pos = 7;
-		for (int i = pos + 2; i < len; i++){
-			cmd[cmd_pos++] = f[i];
-		}
-		cmd[cmd_pos] = '\0';
-		system(cmd);
+		char find_path_compile[MAX_COMPILE_TO_OBJECTS_LENGTH] = {"find . -name "};
 
+		int path_pos = 13;
+		find_path_compile[path_pos++] = '"';
+		for (int i = pos + 2; i < len - 1; i++){
+			find_path_compile[path_pos++] = f[i];
+		}
+		find_path_compile[path_pos++] = '"';
+		find_path_compile[path_pos++] = ' ';
+
+		char cmd[20] = {"-exec gcc {} -c \\;"};
+
+		for (int i = 0; i < 20; i++){
+			find_path_compile[path_pos++] = cmd[i];
+		}
+
+		system(find_path_compile);
+		
 		system("mv *.o .bob/object_files/");
 	}
 	fclose(comp);
