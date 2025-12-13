@@ -16,10 +16,14 @@ int compile_objects()
 
 	char f[MAX_LINE_LENGTH];
 	while (fgets(f, MAX_LINE_LENGTH, comp)){
-		
-		int pos = 0, len = 0;
+
+		int pos = 0, len = 1, ok = 0;
 		while (f[len] != '\0'){
-			if (f[len] >= '0' && f[len] <= '9') pos++;
+			if (f[len] >= '0' && f[len] <= '9' && ok == 0){
+				pos++;
+			} else{
+				ok = 1;
+			}
 			len++;
 		}
 

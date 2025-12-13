@@ -70,7 +70,7 @@ int format_compare()
 
 	time = fopen(".bob/last_edits", "w");
 	if (!time) fprintf(stderr, ".bob/last_edits failed to open in format_compare()\n");
-	
+
 	for (int i = 0; i < line; i++){
 		fputs(l[i] + start[i], time);
 	}
@@ -78,7 +78,7 @@ int format_compare()
 
 	time = fopen(".bob/to_change", "w");
 	if (!time) fprintf(stderr, ".bob/last_edits failed to open in format_compare()\n");
-	
+
 	for (int i = 0; i < pos; i++){
 		fputs(l[new_lines[i]] + start[i], time);
 	}
